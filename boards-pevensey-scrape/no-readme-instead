@@ -1,0 +1,16 @@
+=> (use 'boards-pevensey-scrape.core
+        )
+nil
+=> (require 'boards-pevensey-scrape.core
+        )
+nil
+=> (in-ns 'boards-pevensey-scrape.core)
+#<Namespace boards-pevensey-scrape.core>
+=> (require '[appengine-magic.core :as ae])
+nil
+=> (ae/serve boards-pevensey-scrape-app)
+
+;c:\cygwin\home\h\projects\boards-pevensey-scrape>lein appengine-prepare
+;c:\Users\h\Downloads\eclipse-java-helios-SR2-win32-x86_64\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\bin\dev_appserver.cmd c:\cygwin\home\h\projects\boards-pevensey-scrape\war
+http://code.google.com/appengine/docs/java/jrewhitelist.html
+then deploy thru eclipse
