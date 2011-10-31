@@ -4,9 +4,6 @@
   <version>1</version>
   <static-files/>
   <resource-files/>
- <!--system-properties>
-  <property name="com.google.gdata.DisableCookieHandler" value="true"/>
-</system-properties-->
   <threadsafe>true</threadsafe>
 
 </appengine-web-app>

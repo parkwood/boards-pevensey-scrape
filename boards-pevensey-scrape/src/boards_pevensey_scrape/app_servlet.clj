@@ -5,5 +5,5 @@
 
 
 (defn -service [this request response]
-  ((make-servlet-service-method boards-pevensey-scrape.core/boards-pevensey-scrape-app) this request response))
+  ((make-servlet-service-method boards-pevensey-scrape-app) this request response))
 
