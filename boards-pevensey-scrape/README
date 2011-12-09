@@ -11,13 +11,13 @@ lein deps
 lein repl
 At the repl:
 (require 'util.run-jetty)
-(boards-pevensey-scrape.test.running/run-server)
+(util.run-jetty/run-server)
 
 Then navigate to http://localhost:8080/local-beaches
 
 ## Deploy on appengine
 ;c:\cygwin\home\h\projects\boards-pevensey-scrape>lein appengine-prepare
-;c:\Users\h\Downloads\eclipse-java-helios-SR2-win32-x86_64\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\bin\dev_appserver.cmd c:\cygwin\home\h\projects\boards-pevensey-scrape\war
+;c:\Users\h\Downloads\eclipse-java-helios-SR2-win32-x86_64\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\bin\dev_appserver.cmd c:\users\h\git\boards-pevensey-scrape\boards-pevensey-scrape\war
 ;then deploy thru eclipse
 
 ## License

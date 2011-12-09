@@ -7,3 +7,6 @@
 (defn -service [this request response]
   ((make-servlet-service-method boards-pevensey-scrape-app) this request response))
 
+;(require '[appengine-magic.core :as ae])
+;(ae/serve boards-pevensey-scrape-app)
+; (ae/stop)

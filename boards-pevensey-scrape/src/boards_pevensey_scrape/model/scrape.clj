@@ -1,18 +1,21 @@
 (ns boards-pevensey-scrape.model.scrape
   (:require [net.cgrand.enlive-html :as html])
-  (:require [net.cgrand.xml :as xml]))
+  (:require [appengine-magic.services.url-fetch :as gfetch]))
 
 (def host "http://boards.mpora.com")
 (def looking-ahead-forum "/forums/looking-ahead-f6.html")
  
 ; required to avoid endless redirects
-(java.net.CookieHandler/setDefault (java.net.CookieManager. nil java.net.CookiePolicy/ACCEPT_ALL))
+;(java.net.CookieHandler/setDefault (java.net.CookieManager. nil java.net.CookiePolicy/ACCEPT_ALL))
 
-(defn get-stream-from-url "return empty string in case of connection problem" [s]
-  (try
- (.openStream (java.net.URL. s))
+(defn get-stream-from-url "return empty string in case of connection problem" 
+  [s] (try
+ ;(.openStream (java.net.URL. s))
+          (gfetch/fetch s { :follow-redirects false :async? false})
  (catch Exception e ""))
+  
  )
+
 
 (defn get-all-threads-starting [thread-root-name enlivened-list]
   (html/select enlivened-list [[:a (html/attr-starts :href thread-root-name)]]))
@@ -33,7 +36,7 @@
   
 (defn apply-matching-to-each-page-of-thread
     [topic-regex root-link last-page pages-containing pages-numbers]
-    (let [topic-pages (pmap (partial match-page topic-regex root-link) pages-numbers)]
+    (let [topic-pages (map (partial match-page topic-regex root-link) pages-numbers)]
       (filter (fn [x](not (nil? x))) topic-pages)))
 
 (defn get-pages-containing

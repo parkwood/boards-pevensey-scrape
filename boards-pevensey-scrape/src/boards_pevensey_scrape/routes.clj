@@ -2,7 +2,8 @@
   (:use noir.core
         hiccup.core
         hiccup.page-helpers
-        [boards-pevensey-scrape.model.scrape :as scrape]))
+        [boards-pevensey-scrape.model.scrape :as scrape]
+        [boards-pevensey-scrape.model.reader :as swjk2]))
 
 
 (def local-beaches-regex #"[Pp]evensey|[Cc]ooden|[Pp]osh|[Cc]amber")
@@ -20,3 +21,9 @@
       (for [[link txt] contents] [:item [:title txt ] [:description txt][:link link]])
      ]])))  
   )
+
+(defpage "/words" []
+  (let [word-list (swjk2/get-descriptions (swjk2/get-ids))]
+    (html
+      [:div 
+       (map (fn [x] [:div x]) word-list)]))) 
