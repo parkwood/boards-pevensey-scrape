@@ -3,6 +3,10 @@
 A web application that scrapes the 'looking ahead' forum of boards magazine for any mentions of beaches 
 local to my house: Pevensey, Cooden or Posh.
 
+## FIXME
+- use url fetch service instead of rolling own - which gae doesnt play well with
+- upgrade to clojure 1.3
+
 ## Usage
 
 Install Leiningen and navigate into the top-level dir of the project.
