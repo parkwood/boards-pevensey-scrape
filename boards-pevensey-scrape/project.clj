@@ -6,6 +6,7 @@
                  [com.clojars.jmeeks/clj-web-crawler "0.1.0-SNAPSHOT"]
                  [com.google.api.client/google-api-client "1.4.0-alpha"]
                  [noir "1.1.1-SNAPSHOT"]
+                 [org.clojure/data.zip "0.1.1"]
                  ]
   :dev-dependencies [
     [appengine-magic "0.4.6"]

@@ -23,7 +23,7 @@
   )
 
 (defpage "/words" []
-  (let [word-list (swjk2/get-descriptions (swjk2/get-ids))]
+  (let [word-list (swjk2/get-descriptions (swjk2/swjk-twitter-stream))]
     (html
       [:div 
        (map (fn [x] [:div x]) word-list)]))) 
