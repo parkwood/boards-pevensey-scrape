@@ -9,7 +9,7 @@
                  [org.clojure/data.zip "0.1.1"]
                  ]
   :dev-dependencies [
-    [appengine-magic "0.4.6"]
+    [appengine-magic "0.5.0"]
     [lein-ring "0.4.3"]]
   ;:appengine-app-versions {"test-appengine-site-dev" "2"
   ;                         "test-appengine-site-stage" "2"
