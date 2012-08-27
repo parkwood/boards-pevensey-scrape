@@ -17,6 +17,7 @@
   (zf/xml-> zipper :channel :item :description zf/text))
 
 (defn as-parsed-xml [stream]
+  (println (type stream))
   (zip/xml-zip  (xml/parse stream)))
 
 (defn swjk-twitter-stream []
@@ -24,6 +25,6 @@
     (-> (slurp "resources/user_timeline.rss")
         .getBytes
         java.io.ByteArrayInputStream.)
-    (fetch/fetch "http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=swjk2&count=10000")))
+    (java.io.ByteArrayInputStream. (.content (fetch/fetch "http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=swjk2&count=10000")))))
 ;(System/setProperty "offline", "true")
 

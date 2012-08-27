@@ -3,7 +3,10 @@
         hiccup.core
         hiccup.page-helpers
         [boards-pevensey-scrape.model.scrape :as scrape]
-        [boards-pevensey-scrape.model.reader :as swjk2]))
+        [boards-pevensey-scrape.model.reader :as swjk2]
+        )
+  (:require
+   [noir.response :as response :only json]))
 
 
 (def local-beaches-regex #"[Pp]evensey|[Cc]ooden|[Pp]osh|[Cc]amber")
@@ -23,7 +26,7 @@
   )
 
 (defpage "/words" []
-  (let [word-list (-> swjk2/swjk-twitter-stream swjk2/as-parsed-xml  swjk2/get-descriptions )]
-    (html
-      [:div 
-       (map (fn [x] [:div x]) word-list)]))) 
+;  (html (swjk2/swjk-twitter-stream))
+  (let [stream (swjk2/swjk-twitter-stream)
+        word-list (-> stream  swjk2/as-parsed-xml  swjk2/get-descriptions swjk2/word-to-expln )]
+    (response/json word-list))) 
