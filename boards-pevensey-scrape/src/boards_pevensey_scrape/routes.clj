@@ -6,7 +6,8 @@
         [boards-pevensey-scrape.model.reader :as swjk2]
         )
   (:require
-   [noir.response :as response :only json]))
+   [noir.response :as response :only json]
+   [appengine-magic.services.mail :as mail]))
 
 
 (def local-beaches-regex #"[Pp]evensey|[Cc]ooden|[Pp]osh|[Cc]amber")
@@ -30,3 +31,13 @@
   (let [stream (swjk2/swjk-twitter-stream)
         word-list (-> stream  swjk2/as-parsed-xml  swjk2/get-descriptions swjk2/word-to-expln )]
     (response/json word-list))) 
+
+(defpage "mail-words" []
+  (let [ msg (mail/make-message :from "one@example.com"
+                               :to "henrywidd@yahoo.com"                               
+                               :subject "twitwords"
+                               :text-body "Sent from appengine-magic.")]
+    (mail/send msg)
+    {:status 200
+     :headers {"Content-Type" "text/plain"}
+     :body "sent"}))
