@@ -3,9 +3,10 @@
            [appengine-magic.core :as ae]) 
  )
 
-(do
-  (require 'util.run-jetty)
-  (in-ns 'util.run-jetty))
+(comment
+  (do
+            (require 'util.run-jetty)
+            (in-ns 'util.run-jetty)))
 
 (defn run-server []
   "convenience utility for running the server locally"
