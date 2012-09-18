@@ -1,0 +1,148 @@
+{
+   "html_attributions" : [],
+   "result" : {
+      "address_components" : [
+         {
+            "long_name" : "Coldharbour Road",
+            "short_name" : "Coldharbour Road",
+            "types" : [ "route" ]
+         },
+         {
+            "long_name" : "Upper Dicker",
+            "short_name" : "Upper Dicker",
+            "types" : [ "locality", "political" ]
+         },
+         {
+            "long_name" : "East Sussex",
+            "short_name" : "East Sussex",
+            "types" : [ "administrative_area_level_1", "political" ]
+         },
+         {
+            "long_name" : "GB",
+            "short_name" : "GB",
+            "types" : [ "country", "political" ]
+         },
+         {
+            "long_name" : "BN27 3QE",
+            "short_name" : "BN27 3QE",
+            "types" : [ "postal_code" ]
+         }
+      ],
+      "formatted_address" : "Coldharbour Road, Upper Dicker, United Kingdom",
+      "formatted_phone_number" : "01323 844352",
+      "geometry" : {
+         "location" : {
+            "lat" : 50.8672940,
+            "lng" : 0.2057680
+         }
+      },
+      "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+      "id" : "be9baff3e92e7882a6a1cbbb1de102ef765c207a",
+      "international_phone_number" : "+44 1323 844352",
+      "name" : "The Village Shop Upper Dicker",
+      "opening_hours" : {
+         "open_now" : false,
+         "periods" : [
+            {
+               "close" : {
+                  "day" : 0,
+                  "time" : "1400"
+               },
+               "open" : {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 6,
+                  "time" : "1400"
+               },
+               "open" : {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ]
+      },
+      "reference" : "CoQBewAAAJBZ7vJBrLQ8P_7wZgO5irWZLixfPLzbYjLvBMxD6NF-EqsysaW0WzU1ArpiR7D-Cz__2kZmOZWGiG838bngxJ7cMbAvs7WvztcbwkiWjiCZX1Q7T9-Y-eWedzTg8Uy0V9hA7f7A45XH8HNgdfrmJMl9EmLzGBIXMRuludAE5YQUEhCMWhSlCpTChYQUZi9Lk5RVGhQgRXlJCB0BXYDecK4KPW5yZmTu0Q",
+      "reviews" : [
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "food"
+               },
+               {
+                  "rating" : 3,
+                  "type" : "decor"
+               },
+               {
+                  "rating" : 3,
+                  "type" : "service"
+               }
+            ],
+            "author_name" : "Duncan Maguire",
+            "author_url" : "https://plus.google.com/102838239963383369935",
+            "text" : "Excellent food and superb service, this is the kind of place you want to go back to. I had a &#39;kiwi burger&#39; that was delicious! Friendly and welcoming, good parking too.",
+            "time" : 1344934478
+         }
+      ],
+      "types" : [ "cafe", "food", "establishment" ],
+      "url" : "https://plus.google.com/111527518986690510529/about?hl=en-GB",
+      "utc_offset" : 60,
+      "vicinity" : "Coldharbour Road, Upper Dicker",
+      "website" : "http://www.upperdicker.com/"
+   },
+   "status" : "OK"
+}
