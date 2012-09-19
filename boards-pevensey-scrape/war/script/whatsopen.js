@@ -89,13 +89,19 @@ var processServiceResults = function(results, status){
             if(aOpen){return -1;}
             else{return 1;}
         });
+        var listElement = "<ul data-role='listview' data-inset='true' data-theme='d'>";
         for (var i = 0; i < results.length; i++) {
             var place = results[i];
             var marker = createMarker(place);
 
             isOpen = place.opening_hours && place.opening_hours.open_now ? "yes" : "no";
-            $('#list').append("<li><a href='#'><h1>"+place.name+"</h1><p>Distance: "+1+"km</p> <p>Open: "+isOpen+"</p></a></li>");
+            listElement += "<li><a href='#'><h1>"+place.name+"</h1><p>Distance: "+1+"km</p> <p>Open: "+isOpen+"</p></a></li>";
         }
+
+        var previouslyRendered = $('#listHolder').children().length > 0;
+           
+        $('#listHolder').html(listElement+"</ul>");
+        previouslyRendered && $('#list_results').trigger("create");
     }
 }
 
@@ -134,6 +140,7 @@ var myDoAjax = function(url, callback){
 
    }
 */
+
 var google = {maps: {places:{PlacesServiceStatus:{OK :'OK'}} }}
 
 var generateMapAndListResults = function(positionConfig){
