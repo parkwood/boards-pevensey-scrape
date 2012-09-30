@@ -31,10 +31,38 @@ var placesService;
 
 var showSearchPage = function(positionConfig){
 
-    if(!positionConfig.useBrowserLocation){
-        positionConfig = findLatLongForChosenPlace($('#searchBox').val());
-    }
     $('#searchBox')[0].value = positionConfig.useBrowserLocation? "Current Location" : "";
+
+    $("#searchBox").autocomplete({
+        target: $('#suggestions'),
+        source: function(text, callback){
+            placesService.textSearch({query:text},
+                                     function(results, status){
+                                         if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+                                             for (var i = 0; i < results.length; i++) {
+                                                 var place = results[i];
+                                                 place.label = place.name;
+                                                 place.value = place.reference;
+
+                                             }
+
+                                         }
+                                         callback(results)
+                                     });
+        },
+        link: 'target.html?term=',
+        minLength: 4,
+callback: function(e){
+            var $a = $(e.currentTarget); // access the selected item
+            $('#searchBox').val($a.text()); // place the value of the selection into the search box
+            $("#searchBox").autocomplete('clear'); // clear the
+    // listview
+            var place = jQuery.parseJSON($a.attr('data-autocomplete'));
+            positionConfig.positionInfo = {coords: {latitude: place.geometry.location.Xa, longitude:place.geometry.location.Ya }}
+        }
+        
+    });
 
     $('#searchButton').click(
         function(event){
